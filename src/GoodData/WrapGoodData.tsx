@@ -11,7 +11,8 @@ export default class FirstChart extends Component {
             <Visualization
             
                 projectId='t3izalac0vx1rab9avgb0mjicmhlgjvh'
-                uri='aba1JfJggTlf'
+                identifier='aaK1XHpBdq5C'
+        
             />
         )
         
