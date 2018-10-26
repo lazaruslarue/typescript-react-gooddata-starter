@@ -24,7 +24,12 @@ sdk.user.isLoggedIn().then((isLogged)=> {
     } else {
     // tslint:disable-next-line:no-console
       console.log('aintLogged');
-      window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location.href)}`);
+      window.location.replace(`https://${domain}/account.html?lastUrl=${encodeURIComponent(window.location.href)}`);
     }
   }
 );
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById('root') as HTMLElement
+// );
+// registerServiceWorker();

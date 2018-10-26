@@ -33,7 +33,7 @@
       "secure": false,
       "target": "https://hvst.na.gooddata.com/",
       "headers": {
-        "host": "hvst.na.gooddata.com",
+        "host": "https://hvst.na.gooddata.com",
         "origin": null
       }
     },

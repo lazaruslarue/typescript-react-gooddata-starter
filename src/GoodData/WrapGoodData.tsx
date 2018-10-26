@@ -8,14 +8,16 @@ export default class FirstChart extends Component {
     
     public render() {
         return (
-            <Visualization
-            
-                projectId='t3izalac0vx1rab9avgb0mjicmhlgjvh'
-                identifier='aaK1XHpBdq5C'
-        
-            />
+            <div  style={{ height: 300 }} className="s-visualization-chart">
+
+                <Visualization
+                
+                    projectId='t3izalac0vx1rab9avgb0mjicmhlgjvh'
+                    // identifier='aba1JfJggTlf'
+                    uri="/gdc/md/t3izalac0vx1rab9avgb0mjicmhlgjvh/obj/679"
+                />
+            </div>
         )
         
     }
 }
-
