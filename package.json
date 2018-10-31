@@ -33,15 +33,11 @@
       "cookieDomainRewrite": "localhost",
       "secure": false,
       "target": "https://hvst.na.gooddata.com/",
+      "ws": true,
       "headers": {
         "host": "https://hvst.na.gooddata.com",
         "origin": null
       }
-    },
-    "/*.html": {
-      "changeOrigin": true,
-      "secure": false,
-      "target": "https://hvst.na.gooddata.com/"
     }
   }
 }
