@@ -1,0 +1,24 @@
+
+.Analytics-nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Analytics-nav {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.Analytics-nav > ul > li  a {
+  display: inline;
+  width: 60px;
+  
+}
+
+.Analytics-nav > ul > li  {
+  display: inline;
+  padding-right: 1rem;
+}
+
