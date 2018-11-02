@@ -6,16 +6,19 @@ import registerServiceWorker from './registerServiceWorker';
 
 import { factory } from '@gooddata/gooddata-js';
 import { BrowserRouter } from 'react-router-dom';
+import { UserProvider } from './UserProvider/UserProvider';
 
-const domain = 'localhost:3000'
+const domain = 'localhost:3000' // TODO: this needs to be ENV... set to GD proxy location on build.
 const gooddataSDK = factory({domain})
 
 gooddataSDK.user.isLoggedIn().then((isLogged)=> {
   if (isLogged) {
     ReactDOM.render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>,
+      <UserProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </UserProvider>,
       document.getElementById('root') as HTMLElement
     );
     registerServiceWorker();
