@@ -5,24 +5,22 @@ import { Container,Provider,  ProviderProps,Subscribe,  SubscribeProps } from "u
 interface IUserState {
   loggedIn: boolean,
   /* extend this with permissions for GD */
+  analyticsEnabled: boolean,
+  premiumAnalytics: boolean,
+  showLeadgen: boolean,
+  showBanners: boolean
 }
 
 export class UserContainer extends Container<IUserState> {
   constructor(){
     super();
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      analyticsEnabled: false,
+      premiumAnalytics: false,
+      showLeadgen: false,
+      showBanners: false
     }
-  }
-
-  public async login() {
-    console.log('loggin in');// tslint:disable-line no-console
-    this.setState({loggedIn: true});
-  }
-
-  public async logout() {
-    console.log('loggin out');// tslint:disable-line no-console
-    this.setState({ loggedIn: false})
   }
 }
 
