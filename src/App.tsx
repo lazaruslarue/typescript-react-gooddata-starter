@@ -3,6 +3,7 @@ import * as React from 'react';
 import './App.css';
 
 import Analytics from './Analytics/Analytics';
+import DevControls from './DevControls/DevControl';
 import HvstHeader from './HvstHeader/HvstHeader';
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
       <div className="App">
         <HvstHeader/>
         <Analytics/>
+        <DevControls/>
       </div>
     );
   }
