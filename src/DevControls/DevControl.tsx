@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { FormGroup, FormControlLabel } from '@material-ui/core';
+import { FormControlLabel, FormGroup } from '@material-ui/core';
 
 import Checkbox from '@material-ui/core/Checkbox'
 
@@ -16,15 +16,18 @@ const DevControls = () => {
           control={
             <Checkbox 
               checked={user.state.loggedIn} 
+              /*  tslint:disable-next-line:jsx-no-lambda */
               onChange={()=> user.setState({loggedIn: !user.state.loggedIn})}
             />
           }
           label="Logged In"
         />
         <FormControlLabel
+        
           control={
             <Checkbox 
-              checked={user.state.analyticsEnabled} 
+              checked={user.state.analyticsEnabled}
+              /*  tslint:disable-next-line:jsx-no-lambda */
               onChange={()=> user.setState({analyticsEnabled: !user.state.analyticsEnabled})}
             />
           }
@@ -33,7 +36,8 @@ const DevControls = () => {
         <FormControlLabel
           control={
             <Checkbox 
-              checked={user.state.premiumAnalytics} 
+              checked={user.state.premiumAnalytics}
+              /*  tslint:disable-next-line:jsx-no-lambda */
               onChange={()=> user.setState({premiumAnalytics: !user.state.premiumAnalytics})}
             />
           }
@@ -42,7 +46,8 @@ const DevControls = () => {
         <FormControlLabel
           control={
             <Checkbox 
-              checked={user.state.showLeadgen} 
+              checked={user.state.showLeadgen}
+              /*  tslint:disable-next-line:jsx-no-lambda */
               onChange={()=> user.setState({showLeadgen: !user.state.showLeadgen})}
             />
           }
@@ -51,7 +56,8 @@ const DevControls = () => {
         <FormControlLabel
           control={
             <Checkbox 
-              checked={user.state.showBanners} 
+              checked={user.state.showBanners}
+              /*  tslint:disable-next-line:jsx-no-lambda */
               onChange={()=> user.setState({showBanners: !user.state.showBanners})}
             />
           }

@@ -1,6 +1,6 @@
 
 import * as React from "react";
-import { Container,Provider,  ProviderProps,Subscribe,  SubscribeProps } from "unstated";
+import { Container, Provider, ProviderProps, Subscribe, SubscribeProps } from "unstated";
 
 interface IUserState {
   loggedIn: boolean,
