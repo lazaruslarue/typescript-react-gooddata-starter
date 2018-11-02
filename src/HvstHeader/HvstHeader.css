@@ -1,0 +1,40 @@
+.App-header {
+  background-color: #222;
+  height: 5rem;
+  color: white;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.App-header > .left-side , 
+.App-header > .right-side {
+  align-self: auto;
+}
+
+.Header-platform, .Header-settings {
+  font-size: 1.5em;
+  display: inline;
+  vertical-align: middle;
+  padding-left: 1rem;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 3s linear;
+  height: 4rem;
+  display: inline;
+  vertical-align: middle;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-title {
+  font-size: 1.5em;
+  display: inline;
+  vertical-align: middle;
+}
+
+
