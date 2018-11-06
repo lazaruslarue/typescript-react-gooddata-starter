@@ -1,0 +1,14 @@
+#devNav {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: gray;
+  overflow-x: hidden;
+  transition: 100ms;
+
+  padding-top: 1rem;
+  padding-left: 1rem;
+}

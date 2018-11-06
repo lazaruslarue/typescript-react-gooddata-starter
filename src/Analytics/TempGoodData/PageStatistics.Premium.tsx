@@ -4,11 +4,11 @@ import { Component } from 'react'
 import { Visualization } from '@gooddata/react-components';
 import '@gooddata/react-components/styles/css/main.css';
 
-export default class PageStatistics extends Component {
+export default class PremiumPageStatistics extends Component {
   public render() {
     return (
       <div style={{ height: 300 }} className="s-visualization-chart">
-        Basic Page Stats
+        Premium Page Stats
         <Visualization
           projectId='t3izalac0vx1rab9avgb0mjicmhlgjvh'
           identifier='aarabodYdMhq'
