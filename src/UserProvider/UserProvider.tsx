@@ -12,7 +12,7 @@ interface IUserState {
 }
 
 export class UserContainer extends Container<IUserState> {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       loggedIn: false,
