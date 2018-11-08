@@ -14,6 +14,7 @@ import PostStatistics from './TempGoodData/PostStatistics';
 
 import PremiumPageStatistics from './TempGoodData/PageStatistics.Premium';
 import PremiumPostStatistics from './TempGoodData/PostStatistics.Premium';
+import BannerStatistics from './TempGoodData/BannerStatistics';
 
 export default class Analytics extends Component {
   public render() {
@@ -28,18 +29,19 @@ export default class Analytics extends Component {
             </div>
           )
           }
-
         </UserSubscribe>
       </div>
     )
   }
 
   private AnalyticsApplicationRoutes = (user: UserContainer) => {
-    if (user.state.premiumAnalytics) {
-      return this.PremiumRouteDefinitions()
-    } else {
-      return this.BasicRouteDefinitions()
-    }
+
+    return (
+      <span>
+        {user.state.premiumAnalytics ? this.PremiumRouteDefinitions() : this.BasicRouteDefinitions()}
+        <Route path="/banner-report" component={BannerStatistics} />
+      </span>
+    )
   }
 
   private BasicRouteDefinitions = () => (
@@ -57,7 +59,7 @@ export default class Analytics extends Component {
   )
 
   private RedirectIfNotEnabled = (user: UserContainer) => {
-    if (user.state.analyticsEnabled) {
+    if (user.state.analyticsEnabled || user.state.showBanners) {
       return (
         this.AnalyticsApplicationRoutes(user)
       )
