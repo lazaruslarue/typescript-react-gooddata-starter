@@ -15,11 +15,11 @@ export class UserContainer extends Container<IUserState> {
   constructor() {
     super();
     this.state = {
-      loggedIn: false,
+      loggedIn: true,
       analyticsEnabled: false,
       premiumAnalytics: false,
       showLeadgen: false,
-      showBanners: false
+      showBanners: true
     }
   }
 }
