@@ -2,35 +2,35 @@
 import * as React from "react";
 import { Container, Provider, ProviderProps, Subscribe, SubscribeProps } from "unstated";
 
-interface IUserState {
+interface IAuthState {
   loggedIn: boolean,
   /* extend this with permissions for GD */
-  analyticsEnabled: boolean,
-  premiumAnalytics: boolean,
+  hasPageAnalytics: boolean,
+  hasPremiumAnalytics: boolean,
   showLeadgen: boolean,
-  showBanners: boolean
+  hasBannerReport: boolean
 }
 
-export class UserContainer extends Container<IUserState> {
+export class AuthContainer extends Container<IAuthState> {
   constructor() {
     super();
     this.state = {
       loggedIn: true,
-      analyticsEnabled: false,
-      premiumAnalytics: false,
+      hasPageAnalytics: false,
+      hasPremiumAnalytics: false,
       showLeadgen: false,
-      showBanners: true
+      hasBannerReport: true
     }
   }
 }
 
-const User = new UserContainer();
+const User = new AuthContainer();
 
-export const UserProvider = (props: ProviderProps) => {
+export const AuthProvider = (props: ProviderProps) => {
   return <Provider inject={props.inject || [User]}>{props.children}</Provider>
 }
 
-export const UserSubscribe = (props: SubscribeProps) => {
+export const AuthSubscribe = (props: SubscribeProps) => {
   return <Subscribe to={props.to || [User]}>{props.children}</Subscribe>
 }
 
