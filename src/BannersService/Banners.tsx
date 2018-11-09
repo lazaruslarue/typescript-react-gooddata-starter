@@ -3,14 +3,14 @@ import * as React from "react";
 import { Container, Provider, ProviderProps, Subscribe, SubscribeProps } from "unstated";
 
 interface IBannerState {
-  banners: []
+  banners: [number]
 }
 
 export class BannerContainer extends Container<IBannerState> {
   constructor() {
     super();
     this.state = {
-      banners: []
+      banners: [260]
     }
     this.getBanner()
   }
@@ -27,10 +27,10 @@ export class BannerContainer extends Container<IBannerState> {
       .catch(reason => {
         console.log(reason)
       })
-  });
+  }
 }
 
-}
+
 
 const Banner = new BannerContainer();
 
