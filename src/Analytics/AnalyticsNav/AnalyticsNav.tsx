@@ -28,7 +28,4 @@ export default class AnalyticsNav extends Component {
   private showLeadgenLink = () => (<li><Link to="/leadgen-report">Leadgen Report</Link></li>)
   private showPageLink = () => (<li><Link to="/page">Page Statistics</Link></li>)
   private showPostLink = () => (<li><Link to="/post">Post Statistics</Link></li>)
-
-
-
 }

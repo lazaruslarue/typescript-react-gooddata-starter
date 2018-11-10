@@ -24,14 +24,14 @@ export class AuthContainer extends Container<IAuthState> {
   }
 }
 
-const User = new AuthContainer();
+const Auth = new AuthContainer();
 
 export const AuthProvider = (props: ProviderProps) => {
-  return <Provider inject={props.inject || [User]}>{props.children}</Provider>
+  return <Provider inject={props.inject || [Auth]}>{props.children}</Provider>
 }
 
 export const AuthSubscribe = (props: SubscribeProps) => {
-  return <Subscribe to={props.to || [User]}>{props.children}</Subscribe>
+  return <Subscribe to={props.to || [Auth]}>{props.children}</Subscribe>
 }
 
-export default User;
+export default Auth;
