@@ -11,6 +11,14 @@
   padding: 1rem;
 }
 
+.bannercontainer.vertical {
+  width: 16rem;
+}
+
+.bannercontainer.email {
+  width: 45rem;
+}
+
 .banner-heading {
   font-weight: 600;
   font-size: 1rem;
