@@ -6,7 +6,7 @@ import './App.css';
 import Analytics from './Analytics/Analytics';
 import DevControls from './DevControls/DevControl';
 import HvstHeader from './HvstHeader/HvstHeader';
-import User, { UserContainer, UserSubscribe, } from './UserProvider/UserProvider';
+import Auth, { AuthContainer, AuthSubscribe, } from './AuthService/Auth';
 
 
 const MustLogin = () => (
@@ -19,8 +19,8 @@ class App extends React.Component {
       <div className="App">
         <HvstHeader />
         <DevControls />
-        <UserSubscribe to={[User]}>
-          {(user: UserContainer) => (
+        <AuthSubscribe to={[Auth]}>
+          {(user: AuthContainer) => (
             <div >
               {/*  tslint:disable-next-line:jsx-no-lambda */}
               <Route path="/" render={() => (
@@ -33,7 +33,7 @@ class App extends React.Component {
             </div>
 
           )}
-        </UserSubscribe>
+        </AuthSubscribe>
 
       </div>
     );

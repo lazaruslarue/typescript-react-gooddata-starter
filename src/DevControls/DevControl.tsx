@@ -7,7 +7,7 @@ import { Button, FormControlLabel, FormGroup } from '@material-ui/core';
 import Checkbox from '@material-ui/core/Checkbox'
 
 
-import User, { UserContainer, UserSubscribe } from "../UserProvider/UserProvider";
+import User, { AuthContainer, AuthSubscribe } from "../AuthService/Auth";
 
 export const showDevControls = () => {
   const devNav = document.getElementById('devNav') || null;
@@ -28,8 +28,8 @@ export const hideDevControls = () => {
 
 const DevControls = () => {
   return (
-    <UserSubscribe to={[User]}>
-      {(user: UserContainer) => (
+    <AuthSubscribe to={[User]}>
+      {(user: AuthContainer) => (
         <div id="devNav">
           <Button onClick={hideDevControls} variant="outlined">X</Button>
           <FormGroup >
@@ -47,9 +47,9 @@ const DevControls = () => {
 
               control={
                 <Checkbox
-                  checked={user.state.analyticsEnabled}
+                  checked={user.state.hasPageAnalytics}
                   /*  tslint:disable-next-line:jsx-no-lambda */
-                  onChange={() => user.setState({ analyticsEnabled: !user.state.analyticsEnabled })}
+                  onChange={() => user.setState({ hasPageAnalytics: !user.state.hasPageAnalytics })}
                 />
               }
               label="Analytics Enabled"
@@ -57,9 +57,9 @@ const DevControls = () => {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={user.state.premiumAnalytics}
+                  checked={user.state.hasPremiumAnalytics}
                   /*  tslint:disable-next-line:jsx-no-lambda */
-                  onChange={() => user.setState({ premiumAnalytics: !user.state.premiumAnalytics })}
+                  onChange={() => user.setState({ hasPremiumAnalytics: !user.state.hasPremiumAnalytics })}
                 />
               }
               label="Premium Analytics"
@@ -77,9 +77,9 @@ const DevControls = () => {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={user.state.showBanners}
+                  checked={user.state.hasBannerReport}
                   /*  tslint:disable-next-line:jsx-no-lambda */
-                  onChange={() => user.setState({ showBanners: !user.state.showBanners })}
+                  onChange={() => user.setState({ hasBannerReport: !user.state.hasBannerReport })}
                 />
               }
               label="Show Banners"
@@ -89,7 +89,7 @@ const DevControls = () => {
 
       )
       }
-    </UserSubscribe>
+    </AuthSubscribe>
   )
 }
 

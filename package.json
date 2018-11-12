@@ -45,6 +45,11 @@
       "changeOrigin": true,
       "secure": false,
       "target": "https://hvst.na.gooddata.com/"
+    },
+    "/api": {
+      "changeOrigin": true,
+      "secure": false,
+      "target": "https://www.hvst.com/"
     }
   }
 }
