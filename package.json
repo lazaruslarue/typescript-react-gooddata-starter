@@ -1,6 +1,6 @@
 {
   "name": "hvst-webapp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "dependencies": {
     "@gooddata/react-components": "^6.0.0",
@@ -45,6 +45,11 @@
       "changeOrigin": true,
       "secure": false,
       "target": "https://hvst.na.gooddata.com/"
+    },
+    "/api": {
+      "changeOrigin": true,
+      "secure": false,
+      "target": "https://www.hvst.com/"
     }
   }
 }
