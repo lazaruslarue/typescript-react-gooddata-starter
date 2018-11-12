@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { Component, CSSProperties } from 'react'
+import { Component, } from 'react'
+
+import './Banner.css';
+import { Button } from '@material-ui/core';
 
 export interface IBannerProps {
   bannerHash: string | number
@@ -19,33 +22,6 @@ export interface IBannerState {
 
 export default class Banner extends Component<IBannerProps, IBannerState> {
 
-  private titleStyle = {
-    fontSize: '1em',
-    fontWeight: 600,
-    display: 'inline-block',
-    paddingBottom: '8px'
-  }
-  private imgStyle = {
-    margin: '0 0 8px 0',
-    cursor: 'pointer'
-  }
-  private buttonStyle: CSSProperties = { /** say it's CSSProperties to work around fontWeight */
-    fontWeight: 'bold',
-    padding: '10px',
-    height: 'auto',
-    minHeight: '1em',
-    lineHeight: '1.5em',
-    width: '100%',
-    textTransform: 'capitalize',
-    background: this.state.button_color ? this.state.button_color : '#2196f3'
-  }
-  private descriptionStyle = {
-    display: 'inline-block',
-    width: '100%',
-    color: '#707070',
-    lineHeight: '1.4em',
-    fontSize: '0.8em'
-  }
 
   constructor(props: IBannerProps) {
     super(props);
@@ -71,21 +47,17 @@ export default class Banner extends Component<IBannerProps, IBannerState> {
 
   public render() {
     return (
-      <div  >
-        {this.state.id || null}
-        {this.state.redirect_url || null}
-        {this.state.sponsored_by || null}
-        {this.state.title ? (<span style={this.titleStyle}> {this.state.title} </span>) : null}
-        {this.state.img_url ? <img src={this.state.img_url} style={this.imgStyle} /> : ''}
+      <div className="bannercontainer">
+        {this.state.sponsored_by ? (<span className={"banner-sponsor"}>{this.state.sponsored_by}</span>) : null}
+        {this.state.title ? (<span className={"banner-title"}> {this.state.title} </span>) : null}
+        {this.state.img_url ? <img src={this.state.img_url} /> : ''}
         {this.state.description ? (
           <div style={{ marginBottom: '8px' }}>
-            {this.state.description ? (<span style={this.descriptionStyle}> {this.state.description} </span>) : ''}
+            {this.state.description ? (<span className="banner-description" > {this.state.description} </span>) : ''}
           </div>
         ) : ''}
         {!this.state.email_banner ? (
-          <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style={this.buttonStyle}>
-            {this.state.button_text}
-          </button>) : null}
+          <Button variant="contained" style={{ background: this.state.button_color || "#2196f3" }}>{this.state.button_text}</Button>) : null}
       </div>
     )
   }
