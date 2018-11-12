@@ -10,8 +10,8 @@ export default class BannerStatistics extends Component {
     return (
       <div>
         Banner Post Stats
-        <Banner bannerHash={260} />
-        <Banner bannerHash={181} />
+        <Banner bannerHash={"PEJPhW2X"} />
+        <Banner bannerHash={"LEdmha2w"} />
 
         <Visualization
           projectId='t3izalac0vx1rab9avgb0mjicmhlgjvh'
