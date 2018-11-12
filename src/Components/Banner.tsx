@@ -1,17 +1,20 @@
 import * as React from 'react';
 import { Component, } from 'react'
 
-import './Banner.css';
 import { Button } from '@material-ui/core';
 
+import './Banner.css';
+import email from './email-banner.jpg';
+import vertical from './vertical-banner.jpg';
+
 export interface IBannerProps {
-  bannerHash: string
+  bannerHash: string | number
 }
 
 export interface IBannerState {
   id: number;
   button_text: string;
-  button_color: string;
+  button_color: string | null;
   description: string;
   email_banner: boolean;
   img_url: string;
@@ -21,6 +24,31 @@ export interface IBannerState {
 }
 
 export default class Banner extends Component<IBannerProps, IBannerState> {
+
+  private testbanner: IBannerState[] = [
+    {
+      id: 0,
+      button_text: 'Button Text',
+      button_color: null,
+      description: 'Banner Description',
+      email_banner: false,
+      img_url: vertical,
+      redirect_url: 'string',
+      sponsored_by: 'Sponsoring Firm',
+      title: 'Banner Title'
+    },
+    {
+      id: 1,
+      button_text: 'Button Text',
+      button_color: null,
+      description: 'Banner Description',
+      email_banner: true,
+      img_url: email,
+      redirect_url: 'string',
+      sponsored_by: 'Sponsoring Firm',
+      title: 'Banner Title'
+    },
+  ];
 
   constructor(props: IBannerProps) {
     super(props);
@@ -37,7 +65,10 @@ export default class Banner extends Component<IBannerProps, IBannerState> {
   /**
    * fetchBannerByHash from DB
    */
-  public async fetchBannerByHash(bannerHash: string): Promise<IBannerState> {
+  public async fetchBannerByHash(bannerHash: string | number): Promise<IBannerState> {
+    if (typeof bannerHash !== 'string') {
+      return this.testbanner[bannerHash]
+    }
     return fetch(`/api/bannerhash/${bannerHash}`)
       .then(resp => resp.json())
       .then(data => data.banner)
