@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react'
 
-import { Visualization } from '@gooddata/react-components';
-import '@gooddata/react-components/styles/css/main.css';
 import Banner from 'src/Components/Banner';
+
+import GDBannerStats from 'src/lib/gooddata-ui-components/components/GDBannerStats';
 
 export default class BannerStatistics extends Component {
   // private banners = ["PwQxhbaE",
@@ -27,20 +27,21 @@ export default class BannerStatistics extends Component {
   //   "2w6bhWJw",
   //   "xEvkhPYw",
   //   "LwnMhpgE"]
+
   public render() {
+
+    const props = {
+      bannerComponent: Banner
+
+    }
+
     return (
       <div>
-        Banner Post Stats
-        {/* {this.banners.map(b => (<Banner bannerHash={b}></Banner>))} */}
-        {/* <Banner bannerHash={"PEJPhW2X"} />
-        <Banner bannerHash={"LEdmha2w"} /> */}
-        <Banner bannerHash={0} />
-        <Banner bannerHash={1} />
-        <Visualization
-          projectId='t3izalac0vx1rab9avgb0mjicmhlgjvh'
-          identifier='acjabr3ZfGHG'
-        />
+        Outside BannerStats
+        {/* <Banner bannerHash={0} /> */}
+        <GDBannerStats {...props} />
       </div>
     )
   }
 }
+
