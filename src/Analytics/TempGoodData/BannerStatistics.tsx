@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react'
 
-import Banner from 'src/Components/Banner';
+import Banner, { IBannerProps } from 'src/Components/Banner';
 
-import GDBannerStats from 'src/lib/gooddata-ui-components/components/GDBannerStats';
-
+import { GDBannerStats } from 'src/lib/gooddata-ui-components'
 export default class BannerStatistics extends Component {
   // private banners = ["PwQxhbaE",
   //   "PoYyh00o",
@@ -30,17 +29,21 @@ export default class BannerStatistics extends Component {
 
   public render() {
 
-    const props = {
-      bannerComponent: Banner
-
-    }
-
     return (
       <div>
         Outside BannerStats
         {/* <Banner bannerHash={0} /> */}
-        <GDBannerStats {...props} />
+        <GDBannerStats subComponent={this.bannerWrapper} />
       </div>
+    )
+  }
+
+  private bannerWrapper(props: IBannerProps): JSX.Element {
+    return (
+      <span>
+        <Banner bannerHash={props.bannerHash} />
+      </span>
+
     )
   }
 }
