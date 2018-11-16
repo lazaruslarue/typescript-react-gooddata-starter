@@ -1,0 +1,3 @@
+[submodule "src/lib/gooddata-ui-components"]
+	path = src/lib/gooddata-ui-components
+	url = git@github.com:hvst/gooddata-ui-components.git
